@@ -1,3 +1,4 @@
+from gpiozero import TrafficLights
 from datetime import datetime, timedelta
 import math
 from .seven_segment import SevenSegmentDisplay
@@ -33,4 +34,28 @@ def date_to_seven_segments(date):
     else:
         minutes_left.display(minutes_array[-2])
         minutes_right.display(minutes_array[-1])
+    return True
+
+def show_traffic_lights(next_event_date, available):
+    """
+    Turns on the selected led colour (traffic light) depending on
+    availability and next event date
+    """
+    lights = TrafficLights(4, 17, 18)
+
+    if available:
+        lights.green.on()
+        ligths.amber.off()
+        lights.red.off()
+        return True
+
+    # If next event is in more than 10 minutes show red, else amber
+    if minutes_difference_from_now(next_event_date) > 10:
+        lights.green.off()
+        ligths.amber.off()
+        lights.red.on()
+    else:
+        lights.green.off()
+        ligths.amber.on()
+        lights.red.off()
     return True
