@@ -18,8 +18,8 @@ def date_to_seven_segments(date):
     # Pin configuration: A B C D E F G
     # https://gpiozero.readthedocs.io/en/stable/_images/pin_layout.svg
     # Pins are the ones marked as GPIOXX
-    minutes_left = SevenSegmentDisplay(27, 22, 5, 6, 13, 19, 26)
-    minutes_right = SevenSegmentDisplay(23, 24, 25, 12, 16, 20, 21)
+    minutes_left = SevenSegmentDisplay(4, 17, 13, 19, 26, 27, 22)
+    minutes_right = SevenSegmentDisplay(18, 23, 16, 20, 21, 24, 25)
 
     # Get minutes difference
     minutes_difference = minutes_difference_from_now(date)
@@ -41,7 +41,7 @@ def show_traffic_lights(next_event_date, available):
     Turns on the selected led colour (traffic light) depending on
     availability and next event date
     """
-    lights = TrafficLights(4, 17, 18)
+    lights = TrafficLights(2, 3, 14)
 
     if available:
         lights.green.on()

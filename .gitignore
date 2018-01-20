@@ -100,4 +100,4 @@ ENV/
 # mypy
 .mypy_cache/
 
-clients_secret.json
+client_secret.json
