@@ -18,7 +18,7 @@ def date_to_seven_segments(date):
     # https://gpiozero.readthedocs.io/en/stable/_images/pin_layout.svg
     # Pins are the ones marked as GPIOXX
     minutes_left = SevenSegmentDisplay(27, 22, 5, 6, 13, 19, 26)
-    minutes_right = SevenSegmentDisplay(24, 25, 12, 16, 20, 21)
+    minutes_right = SevenSegmentDisplay(23, 24, 25, 12, 16, 20, 21)
 
     # Get minutes difference
     minutes_difference = minutes_difference_from_now(date)
